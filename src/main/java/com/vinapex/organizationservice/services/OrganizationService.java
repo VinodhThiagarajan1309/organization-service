@@ -2,17 +2,20 @@ package com.vinapex.organizationservice.services;
 
 import com.vinapex.organizationservice.model.Organization;
 import com.vinapex.organizationservice.repository.OrganizationRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
 @Service
+@Slf4j
 public class OrganizationService {
     @Autowired
     private OrganizationRepository orgRepository;
 
     public Organization getOrg(String organizationId) {
+        log.info("The organization Id is :" + organizationId);
         return orgRepository.findById(organizationId).get();
     }
 
