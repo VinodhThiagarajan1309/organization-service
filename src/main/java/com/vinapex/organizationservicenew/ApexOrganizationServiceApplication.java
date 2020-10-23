@@ -1,4 +1,4 @@
-package com.vinapex.organizationservice;
+package com.vinapex.organizationservicenew;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,7 +1,7 @@
-package com.vinapex.organizationservice.repository;
+package com.vinapex.organizationservicenew.repository;
 
 
-import com.vinapex.organizationservice.model.Organization;
+import com.vinapex.organizationservicenew.model.Organization;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

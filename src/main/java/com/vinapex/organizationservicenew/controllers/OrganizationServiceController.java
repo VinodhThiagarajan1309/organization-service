@@ -1,7 +1,7 @@
-package com.vinapex.organizationservice.controllers;
+package com.vinapex.organizationservicenew.controllers;
 
-import com.vinapex.organizationservice.model.Organization;
-import com.vinapex.organizationservice.services.OrganizationService;
+import com.vinapex.organizationservicenew.model.Organization;
+import com.vinapex.organizationservicenew.services.OrganizationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +20,9 @@ public class OrganizationServiceController {
 
     @RequestMapping(value="/{organizationId}",method = RequestMethod.GET)
     public Organization getOrganization(@PathVariable("organizationId") String organizationId) {
-        return orgService.getOrg(organizationId);
+        Organization org = orgService.getOrg(organizationId);
+        org.setContactName("OLD::" + org.getContactName());
+        return org;
     }
 
     @RequestMapping(value="/{organizationId}",method = RequestMethod.PUT)

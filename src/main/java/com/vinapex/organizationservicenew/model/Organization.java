@@ -1,4 +1,4 @@
-package com.vinapex.organizationservice.model;
+package com.vinapex.organizationservicenew.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

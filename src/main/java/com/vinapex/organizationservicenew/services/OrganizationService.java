@@ -1,7 +1,7 @@
-package com.vinapex.organizationservice.services;
+package com.vinapex.organizationservicenew.services;
 
-import com.vinapex.organizationservice.model.Organization;
-import com.vinapex.organizationservice.repository.OrganizationRepository;
+import com.vinapex.organizationservicenew.model.Organization;
+import com.vinapex.organizationservicenew.repository.OrganizationRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
