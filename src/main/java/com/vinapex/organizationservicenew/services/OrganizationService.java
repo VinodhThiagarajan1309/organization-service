@@ -30,7 +30,9 @@ public class OrganizationService {
         orgRepository.save(org);
     }
 
-    public void deleteOrg(Organization org){
-        orgRepository.delete(org);
+    public void deleteOrg(String orgId){
+        Organization organization = new Organization();
+        organization.setId(orgId);
+        orgRepository.delete(organization);
     }
 }
