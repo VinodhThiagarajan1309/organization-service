@@ -1,5 +1,6 @@
 package com.vinapex.organizationservicenew.services;
 
+import com.vinapex.organizationservicenew.events.source.SimpleSourceBean;
 import com.vinapex.organizationservicenew.model.Organization;
 import com.vinapex.organizationservicenew.repository.OrganizationRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -14,6 +15,9 @@ public class OrganizationService {
     @Autowired
     private OrganizationRepository orgRepository;
 
+    @Autowired
+    SimpleSourceBean simpleSourceBean;
+
     public Organization getOrg(String organizationId) {
         log.info("The organization Id is :" + organizationId);
         return orgRepository.findById(organizationId).get();
@@ -23,6 +27,7 @@ public class OrganizationService {
         org.setId( UUID.randomUUID().toString());
 
         orgRepository.save(org);
+        simpleSourceBean.publishOrgChange("SAVE",org.getId());
 
     }
 

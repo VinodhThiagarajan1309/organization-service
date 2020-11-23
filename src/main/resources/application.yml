@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 10081
 eureka:
   instance:
     preferIpAddress: true
@@ -13,3 +13,19 @@ security:
   oauth2:
     resource:
       user-info-uri: http://localhost:8901/auth/user
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination:  orgChangeTopic
+          content-type: application/json
+          #partitionCount: 3
+
+      kafka:
+        binder:
+          zkNodes: localhost:2181
+          brokers: localhost:9092
+          replicationFactor: 1
+          #partitionCount: 3
